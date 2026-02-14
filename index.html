@@ -566,7 +566,7 @@
     </div>
 
     <div class="photo-container">
-        <img id="valentinePhoto" class="photo" src="hvd.jpg" alt="Valentine Photo">
+        <img id="valentinePhoto" class="photo" alt="Valentine Photo">
         <div id="photoText" class="photo-text" style="display: none;">Flowers for you 🌻</div>
     </div>
     
@@ -645,6 +645,12 @@
         const photo = document.getElementById('valentinePhoto');
         const text = document.getElementById('photoText');
         const hideBtn = document.getElementById('hideBtn');
+        
+        // Load the image source dynamically
+        if (!photo.src) {
+            photo.src = 'hvd.jpg';
+        }
+        
         photo.classList.add('visible');
         text.style.display = 'block';
         hideBtn.style.display = 'inline-block';
